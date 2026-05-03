@@ -3,25 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YILMAZ KOSHUA — Faszien · Atem · Klang</title>
-<meta name="description" content="Begleitung in deine Mitte. Faszien-Arbeit, Pranayama und Klang. 3 Einigkeit von Körper, Geist und Seele.">
-<meta property="og:title" content="YILMAZ KOSHUA — Faszien · Atem · Klang">
-<meta property="og:description" content="Begleitung in deine Mitte. 3 Einigkeit von Körper, Geist und Seele.">
-<meta property="og:image" content="header.png">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Yilmaz Koshua — UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --olive: #36391F;
-    --olive-soft: #5C5E3F;
-    --sand: #E3D7C8;
-    --sand-light: #EDE4DA;
-    --cream: #F5EFE6;
-    --line: rgba(54, 57, 31, 0.18);
+    --olive:       #36391F;
+    --olive-soft:  #5C5E3F;
+    --olive-faint: #8C8E6A;
+    --sand:        #E3D7C8;
+    --sand-light:  #EDE4DA;
+    --cream:       #F5EFE6;
+    --line:        rgba(54,57,31,0.18);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, sans-serif;
@@ -40,263 +34,188 @@
   h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
   h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1rem; }
   h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); margin-bottom: 0.5rem; }
-  p { margin-bottom: 1rem; max-width: 60ch; }
-  a { color: var(--olive); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
+  p  { margin-bottom: 1rem; max-width: 60ch; }
+  a  { color: var(--olive); text-decoration: none; border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
   a:hover { border-color: var(--olive); }
   .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* HEADER */
-  .hero {
+  /* ── NAV ── */
+  .site-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(237,228,218,0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 1rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-brand {
+    font-weight: 600; font-size: 0.82rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: none; color: var(--olive);
+  }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; color: var(--olive-soft);
+    letter-spacing: 0.06em; border: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--olive); }
+
+  /* ── HERO ── */
+  .hero { background: var(--sand); position: relative; }
+  .hero-img-wrap {
+    width: 100%;
     background: var(--sand);
-    padding: 0;
     position: relative;
   }
-  .hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .hero-img-wrap img {
+    width: 100%; height: auto; display: block;
+  }
+  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-img-ph {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+    color: var(--olive-soft);
+  }
+  .hero-img-ph svg { opacity: 0.4; }
+  .hero-img-ph p {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1rem; color: var(--olive-soft); max-width: none; margin: 0;
+  }
+  .hero-img-ph span {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--olive-faint);
   }
   .hero-tagline {
-    text-align: center;
-    padding: 2.5rem 1.5rem 1rem;
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    color: var(--olive-soft);
+    text-align: center; padding: 2.5rem 1.5rem 1rem;
+    font-style: italic; font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--olive-soft);
+    max-width: 640px; margin-left: auto; margin-right: auto;
   }
   .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1rem 1.5rem 3rem;
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.8rem; padding: 1rem 1.5rem 3rem;
+    max-width: 640px; margin-left: auto; margin-right: auto;
   }
+
+  /* ── BUTTONS ── */
   .btn {
-    display: inline-block;
-    padding: 0.85rem 1.6rem;
-    border-radius: 999px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border: 1px solid var(--olive);
-    text-decoration: none;
-    transition: all 0.2s;
+    display: inline-block; padding: 0.85rem 1.6rem;
+    border-radius: 999px; font-weight: 500; font-size: 0.95rem;
+    border: 1px solid var(--olive); text-decoration: none;
+    transition: all 0.2s; cursor: pointer; font-family: 'Inter', sans-serif;
   }
-  .btn-primary {
-    background: var(--olive);
-    color: var(--cream);
-  }
-  .btn-primary:hover {
-    background: var(--olive-soft);
-    border-color: var(--olive-soft);
-  }
-  .btn-secondary {
-    background: transparent;
-    color: var(--olive);
-  }
-  .btn-secondary:hover {
-    background: var(--olive);
-    color: var(--cream);
-  }
+  .btn:hover { border-color: var(--olive); }
+  .btn-primary { background: var(--olive); color: var(--cream); }
+  .btn-primary:hover { background: var(--olive-soft); border-color: var(--olive-soft); }
+  .btn-secondary { background: transparent; color: var(--olive); }
+  .btn-secondary:hover { background: var(--olive); color: var(--cream); }
 
-  /* SECTIONS */
-  section {
-    padding: 4.5rem 0;
-  }
-  section:nth-of-type(even) {
-    background: var(--sand);
-  }
+  /* ── SECTIONS ── */
+  section { padding: 4.5rem 0; }
+  section:nth-of-type(even) { background: var(--sand); }
   .section-eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.75rem;
-    color: var(--olive-soft);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.75rem; color: var(--olive-soft);
+    margin-bottom: 0.5rem; font-weight: 500;
   }
+  #kontakt .section-eyebrow,
+  #kontakt h2 { text-align: center; }
 
-  /* TRINITY GRID */
-  .trinity {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
-  }
-  .pillar {
-    background: var(--sand-light);
-    padding: 2rem;
-    border-radius: 4px;
-    border: 1px solid var(--line);
-  }
-  section:nth-of-type(even) .pillar {
-    background: var(--cream);
-  }
-  .pillar-glyph {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 1rem;
-    color: var(--olive);
-  }
-
-  /* OFFERS */
-  .offers {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .offer {
-    padding: 2rem;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    background: var(--sand-light);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  section:nth-of-type(even) .offer {
-    background: var(--cream);
-  }
-  .offer-meta {
-    color: var(--olive-soft);
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-  }
-  .offer-cta {
-    margin-top: 1rem;
-    align-self: flex-start;
-  }
-
-  /* ABOUT GRID */
+  /* ── ABOUT ── */
   .about-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: 3rem; align-items: start;
   }
   .about-text p { max-width: 55ch; }
-  .about-image {
-    position: sticky;
-    top: 2rem;
-  }
-  @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-image { position: static; max-width: 320px; margin: 1rem auto 0; }
-  }
-
-  /* IMAGE PLACEHOLDERS */
-  .image-placeholder {
-    width: 100%;
-    aspect-ratio: 4/5;
+  .about-image { position: sticky; top: 5rem; }
+  .image-ph-portrait {
+    width: 100%; aspect-ratio: 4/5;
     background: repeating-linear-gradient(45deg,
-      var(--cream) 0px,
-      var(--cream) 14px,
-      var(--sand) 14px,
-      var(--sand) 28px);
+      var(--cream) 0px, var(--cream) 14px,
+      var(--sand)  14px, var(--sand)  28px);
     border: 1px dashed var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--olive-soft);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: var(--olive-soft);
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
   }
-  .image-placeholder span {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    display: inline-block;
-    margin-top: 0.5rem;
+  .image-ph-portrait span {
+    font-family: 'Inter', sans-serif; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.15em;
+    display: block; margin-top: 4px;
   }
-  .image-placeholder-wide { aspect-ratio: 16/6; }
 
-  /* ATMOSPHERE STRIPE */
-  .atmosphere {
-    background: var(--sand);
-    padding: 0;
+  /* ── ATMOSPHERE STRIPE ── */
+  .atmosphere { background: var(--sand); padding: 0; }
+  .atmo-ph {
+    width: 100%; aspect-ratio: 16/6;
+    background: repeating-linear-gradient(45deg,
+      var(--cream) 0px, var(--cream) 14px,
+      var(--sand)  14px, var(--sand)  28px);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: var(--olive-soft);
   }
-  .atmosphere .image-placeholder { border: none; }
+  .atmo-ph p { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+  .atmo-ph span { font-family: 'Inter', sans-serif; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-top: 4px; }
 
-  /* MUSIC */
+  /* ── TRINITY ── */
+  .trinity { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; margin-top: 2.5rem; }
+  .pillar { background: var(--sand-light); padding: 2rem; border-radius: 4px; border: 1px solid var(--line); }
+  section:nth-of-type(even) .pillar { background: var(--cream); }
+  .pillar-glyph { width: 36px; height: 36px; margin-bottom: 1rem; color: var(--olive); }
+
+  /* ── OFFERS ── */
+  .offers { display: grid; gap: 1.5rem; margin-top: 2rem; }
+  .offer {
+    padding: 2rem; border: 1px solid var(--line); border-radius: 4px;
+    background: var(--sand-light); display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  section:nth-of-type(even) .offer { background: var(--cream); }
+  .offer-meta { color: var(--olive-soft); font-size: 0.9rem; font-style: italic; margin-bottom: 0.5rem; }
+  .offer-cta { margin-top: 1rem; align-self: flex-start; }
+
+  /* ── MUSIC ── */
   .music-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2.5rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
   }
-  .release {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  .release { display: flex; flex-direction: column; gap: 0.4rem; }
+  .release-cover-ph {
+    width: 100%; aspect-ratio: 1/1; border-radius: 2px;
+    margin-bottom: 0.6rem; box-shadow: 0 2px 12px rgba(54,57,31,0.10);
+    background: var(--olive); color: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; line-height: 1.3; padding: 1rem;
   }
-  .release-cover, .release-cover-placeholder {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 2px;
-    margin-bottom: 0.6rem;
-    box-shadow: 0 2px 12px rgba(54, 57, 31, 0.1);
-  }
-  .release-cover-placeholder {
-    background: var(--olive);
-    color: var(--cream);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    line-height: 1.3;
-    padding: 1rem;
-  }
-  .release-year {
-    font-size: 0.75rem;
-    color: var(--olive-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-  }
-  .release-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    margin-top: 0;
-  }
+  .release-year { font-size: 0.75rem; color: var(--olive-soft); text-transform: uppercase; letter-spacing: 0.12em; }
+  .release-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-top: 0; }
+  .release-link { display: block; text-decoration: none; border: none; }
+  .release-link .release-cover-ph { transition: opacity 0.2s; }
+  .release-link:hover .release-cover-ph { opacity: 0.82; }
 
-  /* CONTACT */
-  .contact-block {
-    text-align: center;
-    margin-top: 2rem;
-  }
+  /* ── CONTACT ── */
+  .contact-block { text-align: center; margin-top: 2rem; }
   .contact-email {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    border: none;
-    color: var(--olive);
+    font-size: clamp(1.5rem, 3vw, 2rem); border: none; color: var(--olive);
   }
-  .social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-  .social a {
-    border: none;
-    color: var(--olive-soft);
-    font-size: 0.95rem;
-  }
+  .social { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+  .social a { border: none; color: var(--olive-soft); font-size: 0.95rem; }
   .social a:hover { color: var(--olive); }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer {
-    padding: 2.5rem 0;
-    text-align: center;
-    color: var(--olive-soft);
-    font-size: 0.85rem;
+    padding: 2.5rem 0; text-align: center;
+    color: var(--olive-soft); font-size: 0.85rem;
     border-top: 1px solid var(--line);
   }
   footer a { border: none; }
 
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-image { position: static; max-width: 280px; margin: 1rem auto 0; }
+    .nav-links { display: none; }
+  }
   @media (max-width: 600px) {
     section { padding: 3.5rem 0; }
     .pillar, .offer { padding: 1.5rem; }
@@ -305,13 +224,27 @@
 </head>
 <body>
 
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-brand">Yilmaz Koshua</a>
+  <ul class="nav-links">
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#drei-einigkeit">3 Einigkeit</a></li>
+    <li><a href="#angebote">Angebote</a></li>
+    <li><a href="#musik">Musik</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
 <!-- HERO -->
 <header class="hero">
-  <img src="header.png" alt="YILMAZ KOSHUA — Faszien · Atem · Klang · Begleitung in deine Mitte" class="hero-img">
+  <div class="hero-img-wrap">
+    <img src="../../assets/images/header.png" alt="YILMAZ KOSHUA — Faszien · Atem · Klang">
+  </div>
   <p class="hero-tagline">Faszien sind die Brücke zwischen Körper und Seele. Ich begleite dich in deine Mitte.</p>
   <div class="cta-row">
-    <a href="mailto:faszinierend@yilmazkoshua.de" class="btn btn-primary">1:1-Session anfragen</a>
-    <a href="#sonntags" class="btn btn-secondary">Sonntags-Neustart</a>
+    <a href="/cdn-cgi/l/email-protection#8aecebf9f0e3e4e3eff8efe4eecaf3e3e6e7ebf0e1e5f9e2ffeba4eeef" class="btn btn-primary">1:1-Session anfragen</a>
+    <a href="#sonntags" class="btn btn-secondary">Faszien Neustart</a>
   </div>
 </header>
 
@@ -323,64 +256,51 @@
         <p class="section-eyebrow">Mein Weg</p>
         <h2>Über mich</h2>
         <p>Ich bin Yilmaz Koshua. Aufgewachsen in Hannover mit türkischen Wurzeln, später in Berlin gelebt, mittlerweile auf eigenen Wegen.</p>
-        <p>2018 erlebte ich durch bewusstes Atmen eine tiefgreifende Wiedergeburt — sieben Tage und Nächte voller Bewusstheit, in denen sich mein gesamtes System neu synchronisiert hat. Diese Erfahrung hat alles verändert. Aus „Yili" wurde Yilmaz Koshua, und mein Weg führte mich von der Medien- und Studio-Arbeit zur Körperarbeit, zur Meditation, zum Klang.</p>
-        <p>Schon mit zehn Jahren habe ich begonnen zu massieren — meine Schwester nach der Arbeit, fast jeden Abend. Diese frühe Erfahrung des Gebens prägt meinen Weg bis heute. Über Yoga, Qi Gong und Pranayama habe ich meine eigene Art der Körperarbeit gefunden, die heute in der Faszien-Arbeit ihren Anker hat.</p>
+        <p>2018 erlebte ich durch bewusstes Atmen eine tiefgreifende Wiedergeburt — sieben Tage und Nächte voller Bewusstheit, in denen sich mein gesamtes System neu synchronisiert hat. Diese Erfahrung hat alles verändert.</p>
+        <p>Schon mit zehn Jahren habe ich begonnen zu massieren. Über Yoga, Qi Gong und Pranayama habe ich meine eigene Art der Körperarbeit gefunden, die heute in der Faszien-Arbeit ihren Anker hat.</p>
         <p>Meine Arbeit ist nicht-therapeutisch im juristischen Sinne. Was ich anbiete, ist Begleitung — durch Berührung, Atem, Klang und einen Raum, in dem du ankommen darfst.</p>
       </div>
       <div class="about-image">
-        <!-- PLATZHALTER: Portrait von Yilmaz · 4:5 oder quadratisch · ca. 800×1000 px · contemplativ, ruhig, natürliches Licht · NICHT lächelnd-werblich, eher: Blick zur Seite, geschlossene Augen oder leichter Halbprofil · Datei img/portrait.jpg ablegen -->
-        <div class="image-placeholder">
-          <p>Portrait<br><span>4:5 · contemplativ</span></p>
-        </div>
+        <img src="../../assets/images/portrait.jpg" alt="Yilmaz Koshua" style="width:100%; border-radius:4px; display:block;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ATMOSPHÄRE-STRIPE -->
-<div class="atmosphere">
-  <!-- PLATZHALTER: atmosphärisches Bild · Hände auf Haut, Stoff, Licht durch Bäume, oder ein abstrakter Naturmoment · 16:6 Querformat · ca. 1800×675 px · gedeckt, warm, nicht plakativ · Datei img/atmo-1.jpg -->
-  <div class="image-placeholder image-placeholder-wide">
-    <p>Atmosphäre-Bild<br><span>Hände · Licht · Stille</span></p>
-  </div>
-</div>
+<!-- ATMOSPHÄRE STRIPE -->
+
 
 <!-- 3 EINIGKEIT -->
 <section id="drei-einigkeit">
   <div class="container">
     <p class="section-eyebrow">Architektur meiner Arbeit</p>
     <h2>3 Einigkeit</h2>
-    <p>Mein Weg führt durch drei Felder, die für mich eines sind: Körper, Geist und Seele. Faszien sind die Brücke. Der Geist lebt dazwischen, im Kopf.</p>
-    <p>Wenn alle drei in Einheit schwingen, können wir unser Potenzial in größter Schaffenskraft entfalten und wachsen.</p>
-
+    <p>Mein Weg führt durch drei Felder, die für mich eines sind: Körper, Geist und Seele.</p>
+    <p>Wenn alle drei in Einheit schwingen, können wir unser Potenzial in größter Schaffenskraft entfalten.</p>
     <div class="trinity">
       <div class="pillar">
-        <svg class="pillar-glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
-          <circle cx="18" cy="18" r="10"/>
-          <circle cx="13" cy="22" r="6"/>
-          <circle cx="23" cy="22" r="6"/>
+        <svg class="pillar-glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1">
+          <circle cx="14.5" cy="15" r="11"/><circle cx="25.5" cy="15" r="11"/><circle cx="20" cy="24" r="11"/>
+          <circle cx="20" cy="18" r="1.4" fill="currentColor" stroke="none"/>
         </svg>
         <h3>Körper</h3>
-        <p>Faszien-Arbeit, manuelle Sessions, gezielte Bewegungs- und Mobility-Übungen. Ich arbeite mit dem Gewebe, das deinen Körper trägt — und mit dem, was sich darin festgehalten hat.</p>
+        <p>Faszien-Arbeit, manuelle Sessions, gezielte Bewegungs- und Mobility-Übungen. Ich arbeite mit dem Gewebe, das deinen Körper trägt.</p>
       </div>
       <div class="pillar">
-        <svg class="pillar-glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
-          <circle cx="18" cy="13" r="10"/>
-          <circle cx="13" cy="22" r="6"/>
-          <circle cx="23" cy="22" r="6"/>
+        <svg class="pillar-glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1">
+          <circle cx="14.5" cy="15" r="11"/><circle cx="25.5" cy="15" r="11"/><circle cx="20" cy="24" r="11"/>
+          <circle cx="20" cy="18" r="1.4" fill="currentColor" stroke="none"/>
         </svg>
         <h3>Geist</h3>
-        <p>Pranayama, Meditation und Konzentrationsübungen. Über den Atem findet der Geist Heimat — nicht über mehr Denken, sondern über bewusstes Spüren.</p>
+        <p>Pranayama, Meditation und Konzentrationsübungen. Über den Atem findet der Geist Heimat — nicht über mehr Denken.</p>
       </div>
       <div class="pillar">
-        <svg class="pillar-glyph" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4">
-          <circle cx="18" cy="13" r="10"/>
-          <circle cx="13" cy="22" r="6"/>
-          <circle cx="23" cy="22" r="6"/>
-          <circle cx="18" cy="19" r="1.5" fill="currentColor"/>
+        <svg class="pillar-glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.1">
+          <circle cx="14.5" cy="15" r="11"/><circle cx="25.5" cy="15" r="11"/><circle cx="20" cy="24" r="11"/>
+          <circle cx="20" cy="18" r="1.4" fill="currentColor" stroke="none"/>
         </svg>
         <h3>Seele</h3>
-        <p>Klang, Affirmation, Musik mit Texten, die für mich wirken, weil sie aus meinem Herzen kommen. Wenn Körper und Geist still werden, hörst du, was die Seele schon immer wusste.</p>
+        <p>Klang, Affirmation, Musik mit Texten aus dem Herzen. Wenn Körper und Geist still werden, hörst du, was die Seele wusste.</p>
       </div>
     </div>
   </div>
@@ -391,28 +311,25 @@
   <div class="container">
     <p class="section-eyebrow">Mit mir arbeiten</p>
     <h2>Angebote</h2>
-
     <div class="offers">
       <div class="offer">
         <p class="offer-meta">1:1 · 60–90 Min · Online oder vor Ort</p>
         <h3>Faszien-Session</h3>
-        <p>Eine individuelle Begleitung durch deinen Körper. Wir arbeiten mit gezielten Faszien-Manövern, Atem und Klang an dem, was sich gerade zeigt — eine Spannung, ein Bereich, ein Muster. Kein Standard-Programm, sondern was du brauchst.</p>
-        <a href="mailto:faszinierend@yilmazkoshua.de?subject=Anfrage%201%3A1-Session" class="btn btn-primary offer-cta">Session anfragen</a>
+        <p>Eine individuelle Begleitung durch deinen Körper. Wir arbeiten mit gezielten Faszien-Manövern, Atem und Klang — kein Standard-Programm, sondern was du brauchst.</p>
+        <a href="/cdn-cgi/l/email-protection#503631232a393e393522353e341029393c3d312a3b3f233825317e34356f2325323a3533246d113e362231373575626061756311617d03352323393f3e" class="btn btn-primary offer-cta">Session anfragen</a>
       </div>
-
       <div class="offer" id="sonntags">
         <p class="offer-meta">Group · 60 Min · Sonntags 11 Uhr · Live online</p>
         <h3>Sonntags-Neustart</h3>
-        <p>Eine geführte Stunde durch sanfte Faszien-Maneuver, Atemarbeit und einen kurzen Klang-Anker. Du gehst danach mit klarerem Körper, ruhigerem Geist und ein bisschen mehr Mitte in den Sonntag.</p>
+        <p>Eine geführte Stunde durch sanfte Faszien-Maneuver, Atemarbeit und einen kurzen Klang-Anker. Du gehst danach mit klarerem Körper und ruhigerem Geist in den Sonntag.</p>
         <p class="offer-meta">Spendenbasis · empfohlener Beitrag 5–25 € · wer gerade nicht zahlen kann, ist genauso willkommen</p>
-        <a href="mailto:faszinierend@yilmazkoshua.de?subject=Sonntags-Neustart%20%E2%80%94%20Anmeldung" class="btn btn-secondary offer-cta">Anmelden</a>
+        <a href="https://www.cal.eu/yilmazkoshua/60minneustart?user=yilmazkoshua&overlayCalendar=true" target="_blank" rel="noopener" class="btn btn-secondary offer-cta">Anmelden</a>
       </div>
-
       <div class="offer">
         <p class="offer-meta">Coming soon</p>
-        <h3>Workshops & Retreats</h3>
+        <h3>Workshops &amp; Retreats</h3>
         <p>Längere Formate, in denen wir tiefer eintauchen. Termine kommen — sag Bescheid, wenn du auf der Liste sein möchtest.</p>
-        <a href="mailto:faszinierend@yilmazkoshua.de?subject=Interesse%20Workshops%20%26%20Retreats" class="btn btn-secondary offer-cta">Auf die Liste</a>
+        <a href="/cdn-cgi/l/email-protection#a7c1c6d4ddcec9cec2d5c2c9c3e7dececbcac6ddccc8d4cfd2c689c3c298d4d2c5cdc2c4d39aeec9d3c2d5c2d4d4c2829597f0c8d5ccd4cfc8d7d4" class="btn btn-secondary offer-cta">Auf die Liste</a>
       </div>
     </div>
   </div>
@@ -423,39 +340,56 @@
   <div class="container">
     <p class="section-eyebrow">Klang</p>
     <h2>Musik</h2>
-    <p>Ich schreibe seit über zwanzig Jahren Lieder. New Age, Spiritual Pop, Singer-Songwriter — auf Deutsch und Englisch, mit Stimme, Gitarre und Kanun. Affirmationen, die für mich wirken, weil sie aus meinem Herzen kommen.</p>
-
+    <p>Ich schreibe seit über zwanzig Jahren Lieder. New Age, Spiritual Pop, Singer-Songwriter — auf Deutsch und Englisch, mit Stimme, Gitarre und Kanun.</p>
     <div class="music-grid">
       <div class="release">
-        <img src="img/cover3000.jpg" alt="Stern · Single Cover" class="release-cover">
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#36391F;"><p>Stern</p></div>
+        </a>
         <p class="release-year">Single · 2026</p>
         <p class="release-title">Stern</p>
       </div>
       <div class="release">
-        <img src="img/wunschkonzert.jpg" alt="Wunschkonzert · Album Cover" class="release-cover">
-        <p class="release-year">Album · 2019</p>
-        <p class="release-title">Wunschkonzert</p>
-      </div>
-      <div class="release">
-        <img src="img/federleicht.jpg" alt="Federleicht · Single Cover" class="release-cover">
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#5C5E3F;"><p>Feder-<br>leicht</p></div>
+        </a>
         <p class="release-year">Single · 2024</p>
         <p class="release-title">Federleicht</p>
       </div>
       <div class="release">
-        <!-- PLATZHALTER: Cover für Hoffnung / Ciao Kakao / Rose & Gold — eines wählen oder Sammel-Tile -->
-        <div class="release-cover-placeholder">
-          <p>weitere<br>Singles</p>
-        </div>
-        <p class="release-year">Singles</p>
-        <p class="release-title">Hoffnung · Ciao Kakao · Rose &amp; Gold</p>
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#4a4830;"><p>Hoffnung</p></div>
+        </a>
+        <p class="release-year">Single</p>
+        <p class="release-title">Hoffnung</p>
       </div>
       <div class="release">
-        <!-- PLATZHALTER: Podcast-Cover Männer & Gefühle, falls vorhanden -->
-        <div class="release-cover-placeholder">
-          <p>Podcast<br>Männer &amp; Gefühle</p>
-        </div>
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#7a5c4a;"><p>Rose &amp; Gold</p></div>
+        </a>
+        <p class="release-year">Single</p>
+        <p class="release-title">Rose &amp; Gold</p>
+      </div>
+      <div class="release">
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#3d3820;"><p>Ciao Kakao</p></div>
+        </a>
+        <p class="release-year">Single</p>
+        <p class="release-title">Ciao Kakao</p>
+      </div>
+      <div class="release">
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#4a4a2e;"><p>Wunsch-<br>konzert</p></div>
+        </a>
+        <p class="release-year">Album · 2019</p>
+        <p class="release-title">Wunschkonzert</p>
+      </div>
+      <div class="release">
+        <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
+          <div class="release-cover-ph" style="background:#2C2A26;"><p>Männer &amp;<br>Gefühle</p></div>
+        </a>
         <p class="release-year">Podcast · 2025</p>
-        <p class="release-title">Männer & Gefühle</p>
+        <p class="release-title">Männer &amp; Gefühle</p>
       </div>
     </div>
   </div>
@@ -464,14 +398,11 @@
 <!-- KONTAKT -->
 <section id="kontakt">
   <div class="container">
-    <p class="section-eyebrow">Kontakt</p>
     <h2>Komm in Kontakt</h2>
-    <p style="text-align: center; max-width: 100%; margin-left: auto; margin-right: auto;">Schreib mir, wenn du eine Session anfragen möchtest, eine Frage hast, oder einfach Hallo sagen willst.</p>
-
+    <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto; display:block;">Schreib mir, wenn du eine Session anfragen möchtest oder eine Frage hast.</p>
     <div class="contact-block">
-      <a href="mailto:faszinierend@yilmazkoshua.de" class="contact-email">faszinierend@yilmazkoshua.de</a>
+      <a href="/cdn-cgi/l/email-protection#f3959280899a9d9a9681969d97b38a9a9f9e9289989c809b8692dd9796" class="contact-email"><span class="__cf_email__" data-cfemail="8ceaedfff6e5e2e5e9fee9e2e8ccf5e5e0e1edf6e7e3ffe4f9eda2e8e9">[email&#160;protected]</span></a>
     </div>
-
     <div class="social">
       <a href="https://www.tiktok.com/@yilmaz.koshua" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.instagram.com/yilmaz.koshua" target="_blank" rel="noopener">Instagram</a>
@@ -482,10 +413,10 @@
 </section>
 
 <footer>
-  <div class="container">
-    <p>© 2026 YILMAZ KOSHUA · 3 Einigkeit · Begleitung in deine Mitte</p>
+  <div class="container" style="text-align:center;">
+    <p style="text-align:center; max-width:none; margin-left:auto; margin-right:auto;">© 2026 YILMAZ KOSHUA · 3 Einigkeit · Begleitung in deine Mitte</p>
   </div>
 </footer>
 
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
