@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yilmaz Koshua — UI Kit</title>
+<title>YILMAZ KOSHUA — Faszien · Atem · Klang</title>
+<meta name="description" content="Begleitung in deine Mitte. Faszien-Arbeit, Pranayama und Klang. 3 Einigkeit von Körper, Geist und Seele.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -39,7 +40,7 @@
   a:hover { border-color: var(--olive); }
   .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
 
-  /* ── NAV ── */
+  /* NAV */
   .site-nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(237,228,218,0.94);
@@ -61,30 +62,10 @@
   }
   .nav-links a:hover { color: var(--olive); }
 
-  /* ── HERO ── */
+  /* HERO */
   .hero { background: var(--sand); position: relative; }
-  .hero-img-wrap {
-    width: 100%;
-    background: var(--sand);
-    position: relative;
-  }
-  .hero-img-wrap img {
-    width: 100%; height: auto; display: block;
-  }
-  .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .hero-img-ph {
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
-    color: var(--olive-soft);
-  }
-  .hero-img-ph svg { opacity: 0.4; }
-  .hero-img-ph p {
-    font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 1rem; color: var(--olive-soft); max-width: none; margin: 0;
-  }
-  .hero-img-ph span {
-    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em;
-    color: var(--olive-faint);
-  }
+  .hero-img-wrap { width: 100%; background: var(--sand); position: relative; }
+  .hero-img-wrap img { width: 100%; height: auto; display: block; }
   .hero-tagline {
     text-align: center; padding: 2.5rem 1.5rem 1rem;
     font-style: italic; font-family: 'Cormorant Garamond', serif;
@@ -97,20 +78,19 @@
     max-width: 640px; margin-left: auto; margin-right: auto;
   }
 
-  /* ── BUTTONS ── */
+  /* BUTTONS */
   .btn {
     display: inline-block; padding: 0.85rem 1.6rem;
     border-radius: 999px; font-weight: 500; font-size: 0.95rem;
     border: 1px solid var(--olive); text-decoration: none;
     transition: all 0.2s; cursor: pointer; font-family: 'Inter', sans-serif;
   }
-  .btn:hover { border-color: var(--olive); }
   .btn-primary { background: var(--olive); color: var(--cream); }
   .btn-primary:hover { background: var(--olive-soft); border-color: var(--olive-soft); }
   .btn-secondary { background: transparent; color: var(--olive); }
   .btn-secondary:hover { background: var(--olive); color: var(--cream); }
 
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 4.5rem 0; }
   section:nth-of-type(even) { background: var(--sand); }
   .section-eyebrow {
@@ -121,49 +101,22 @@
   #kontakt .section-eyebrow,
   #kontakt h2 { text-align: center; }
 
-  /* ── ABOUT ── */
+  /* ABOUT */
   .about-grid {
     display: grid; grid-template-columns: 1.4fr 1fr;
     gap: 3rem; align-items: start;
   }
   .about-text p { max-width: 55ch; }
   .about-image { position: sticky; top: 5rem; }
-  .image-ph-portrait {
-    width: 100%; aspect-ratio: 4/5;
-    background: repeating-linear-gradient(45deg,
-      var(--cream) 0px, var(--cream) 14px,
-      var(--sand)  14px, var(--sand)  28px);
-    border: 1px dashed var(--line);
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; color: var(--olive-soft);
-    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-  }
-  .image-ph-portrait span {
-    font-family: 'Inter', sans-serif; font-size: 0.68rem;
-    text-transform: uppercase; letter-spacing: 0.15em;
-    display: block; margin-top: 4px;
-  }
+  .about-image img { width: 100%; border-radius: 4px; display: block; }
 
-  /* ── ATMOSPHERE STRIPE ── */
-  .atmosphere { background: var(--sand); padding: 0; }
-  .atmo-ph {
-    width: 100%; aspect-ratio: 16/6;
-    background: repeating-linear-gradient(45deg,
-      var(--cream) 0px, var(--cream) 14px,
-      var(--sand)  14px, var(--sand)  28px);
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; color: var(--olive-soft);
-  }
-  .atmo-ph p { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-  .atmo-ph span { font-family: 'Inter', sans-serif; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-top: 4px; }
-
-  /* ── TRINITY ── */
+  /* TRINITY */
   .trinity { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; margin-top: 2.5rem; }
   .pillar { background: var(--sand-light); padding: 2rem; border-radius: 4px; border: 1px solid var(--line); }
   section:nth-of-type(even) .pillar { background: var(--cream); }
   .pillar-glyph { width: 36px; height: 36px; margin-bottom: 1rem; color: var(--olive); }
 
-  /* ── OFFERS ── */
+  /* OFFERS */
   .offers { display: grid; gap: 1.5rem; margin-top: 2rem; }
   .offer {
     padding: 2rem; border: 1px solid var(--line); border-radius: 4px;
@@ -173,15 +126,18 @@
   .offer-meta { color: var(--olive-soft); font-size: 0.9rem; font-style: italic; margin-bottom: 0.5rem; }
   .offer-cta { margin-top: 1rem; align-self: flex-start; }
 
-  /* ── MUSIC ── */
+  /* MUSIC */
   .music-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
     gap: 1.5rem; margin-top: 2.5rem;
   }
   .release { display: flex; flex-direction: column; gap: 0.4rem; }
-  .release-cover-ph {
+  .release-cover, .release-cover-ph {
     width: 100%; aspect-ratio: 1/1; border-radius: 2px;
     margin-bottom: 0.6rem; box-shadow: 0 2px 12px rgba(54,57,31,0.10);
+    object-fit: cover;
+  }
+  .release-cover-ph {
     background: var(--olive); color: var(--cream);
     display: flex; align-items: center; justify-content: center;
     text-align: center; font-family: 'Cormorant Garamond', serif;
@@ -190,20 +146,21 @@
   .release-year { font-size: 0.75rem; color: var(--olive-soft); text-transform: uppercase; letter-spacing: 0.12em; }
   .release-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-top: 0; }
   .release-link { display: block; text-decoration: none; border: none; }
-  .release-link .release-cover-ph { transition: opacity 0.2s; }
-  .release-link:hover .release-cover-ph { opacity: 0.82; }
+  .release-link:hover .release-cover,
+  .release-link:hover .release-cover-ph { opacity: 0.82; transition: opacity 0.2s; }
 
-  /* ── CONTACT ── */
+  /* CONTACT */
   .contact-block { text-align: center; margin-top: 2rem; }
   .contact-email {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.5rem, 3vw, 2rem); border: none; color: var(--olive);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem); border: none; color: var(--olive);
+    word-break: break-word;
   }
   .social { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
   .social a { border: none; color: var(--olive-soft); font-size: 0.95rem; }
   .social a:hover { color: var(--olive); }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     padding: 2.5rem 0; text-align: center;
     color: var(--olive-soft); font-size: 0.85rem;
@@ -239,11 +196,11 @@
 <!-- HERO -->
 <header class="hero">
   <div class="hero-img-wrap">
-    <img src="img/Header.png" alt="YILMAZ KOSHUA — Faszien · Atem · Klang">
+    <img src="img/header.png" alt="YILMAZ KOSHUA — Faszien · Atem · Klang">
   </div>
   <p class="hero-tagline">Faszien sind die Brücke zwischen Körper und Seele. Ich begleite dich in deine Mitte.</p>
   <div class="cta-row">
-    <a href="/cdn-cgi/l/email-protection#fc9a9d8f86959295998e999298bc859590919d8697938f94899dd29899" class="btn btn-primary">1:1-Session anfragen</a>
+    <a href="#" onclick="kontakt('Anfrage 1:1-Session');return false;" class="btn btn-primary">1:1-Session anfragen</a>
     <a href="#sonntags" class="btn btn-secondary">Faszien Neustart</a>
   </div>
 </header>
@@ -261,14 +218,11 @@
         <p>Meine Arbeit ist nicht-therapeutisch im juristischen Sinne. Was ich anbiete, ist Begleitung — durch Berührung, Atem, Klang und einen Raum, in dem du ankommen darfst.</p>
       </div>
       <div class="about-image">
-        <img src="img/IMG_7975.jpg" alt="Yilmaz Koshua" style="width:100%; border-radius:4px; display:block;">
+        <img src="img/portrait.jpg" alt="Yilmaz Koshua">
       </div>
     </div>
   </div>
 </section>
-
-<!-- ATMOSPHÄRE STRIPE -->
-
 
 <!-- 3 EINIGKEIT -->
 <section id="drei-einigkeit">
@@ -316,7 +270,7 @@
         <p class="offer-meta">1:1 · 60–90 Min · Online oder vor Ort</p>
         <h3>Faszien-Session</h3>
         <p>Eine individuelle Begleitung durch deinen Körper. Wir arbeiten mit gezielten Faszien-Manövern, Atem und Klang — kein Standard-Programm, sondern was du brauchst.</p>
-        <a href="/cdn-cgi/l/email-protection#442225373e2d2a2d2136212a20043d2d2829253e2f2b372c31256a20217b3731262e21273079052a2236252321617674756177057569172137372d2b2a" class="btn btn-primary offer-cta">Session anfragen</a>
+        <a href="#" onclick="kontakt('Anfrage 1:1-Session');return false;" class="btn btn-primary offer-cta">Session anfragen</a>
       </div>
       <div class="offer" id="sonntags">
         <p class="offer-meta">Group · 60 Min · Sonntags 11 Uhr · Live online</p>
@@ -329,7 +283,7 @@
         <p class="offer-meta">Coming soon</p>
         <h3>Workshops &amp; Retreats</h3>
         <p>Längere Formate, in denen wir tiefer eintauchen. Termine kommen — sag Bescheid, wenn du auf der Liste sein möchtest.</p>
-        <a href="/cdn-cgi/l/email-protection#badcdbc9c0d3d4d3dfc8dfd4defac3d3d6d7dbc0d1d5c9d2cfdb94dedf85c9cfd8d0dfd9ce87f3d4cedfc8dfc9c9df9f888aedd5c8d1c9d2d5cac9" class="btn btn-secondary offer-cta">Auf die Liste</a>
+        <a href="#" onclick="kontakt('Interesse Workshops & Retreats');return false;" class="btn btn-secondary offer-cta">Auf die Liste</a>
       </div>
     </div>
   </div>
@@ -351,14 +305,14 @@
       </div>
       <div class="release">
         <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
-          <img src="img/Federleicht.jpg" alt="Federleicht" class="release-cover-ph" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;box-shadow:0 2px 12px rgba(54,57,31,0.10);margin-bottom:0;">
+          <img src="img/federleicht.jpg" alt="Federleicht" class="release-cover">
         </a>
         <p class="release-year">Single · 2024</p>
         <p class="release-title">Federleicht</p>
       </div>
       <div class="release">
         <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
-          <img src="img/Hoffnung.jpg" alt="Hoffnung" class="release-cover-ph" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;box-shadow:0 2px 12px rgba(54,57,31,0.10);margin-bottom:0;">
+          <img src="img/hoffnung.jpg" alt="Hoffnung" class="release-cover">
         </a>
         <p class="release-year">Single</p>
         <p class="release-title">Hoffnung</p>
@@ -379,7 +333,7 @@
       </div>
       <div class="release">
         <a href="https://linktr.ee/YILMAZ.KOSHUA" target="_blank" rel="noopener" class="release-link">
-          <img src="img/Wunschkonzert Cover.jpg" alt="Wunschkonzert" class="release-cover-ph" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;box-shadow:0 2px 12px rgba(54,57,31,0.10);margin-bottom:0;">
+          <img src="img/wunschkonzert.jpg" alt="Wunschkonzert" class="release-cover">
         </a>
         <p class="release-year">Album · 2019</p>
         <p class="release-title">Wunschkonzert</p>
@@ -401,7 +355,7 @@
     <h2>Komm in Kontakt</h2>
     <p style="text-align:center; max-width:100%; margin-left:auto; margin-right:auto; display:block;">Schreib mir, wenn du eine Session anfragen möchtest oder eine Frage hast.</p>
     <div class="contact-block">
-      <a href="/cdn-cgi/l/email-protection#93f5f2e0e9fafdfaf6e1f6fdf7d3eafafffef2e9f8fce0fbe6f2bdf7f6" class="contact-email"><span class="__cf_email__" data-cfemail="f79196848d9e999e9285929993b78e9e9b9a968d9c98849f8296d99392">[email&#160;protected]</span></a>
+      <a href="#" onclick="kontakt();return false;" class="btn btn-primary" style="font-size:1rem;">Schreib mir eine Nachricht</a>
     </div>
     <div class="social">
       <a href="https://www.tiktok.com/@yilmaz.koshua" target="_blank" rel="noopener">TikTok</a>
@@ -418,5 +372,17 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script>
+  // Email-Adresse wird erst beim Klick zusammengesetzt — kein Klartext im Source-Code.
+  (function() {
+    var u = ['fasz', 'inier', 'end'].join('');
+    var d = ['yilmaz', 'koshua'].join('') + '.' + 'de';
+    window.kontakt = function(subject) {
+      var sub = subject ? '?subject=' + encodeURIComponent(subject) : '';
+      window.location.href = 'mai' + 'lto:' + u + '@' + d + sub;
+    };
+  })();
+</script>
+
+</body>
 </html>
