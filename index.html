@@ -114,7 +114,11 @@
   .trinity { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 2rem; margin-top: 2.5rem; }
   .pillar { background: var(--sand-light); padding: 2rem; border-radius: 4px; border: 1px solid var(--line); }
   section:nth-of-type(even) .pillar { background: var(--cream); }
-  .pillar-glyph { width: 36px; height: 36px; margin-bottom: 1rem; color: var(--olive); }
+  .pillar-glyph { width: 36px; height: 36px; margin-bottom: 1rem; color: var(--olive); display: block; }
+  /* Symbol-Position folgt der 3 Einigkeit-Reise: Körper (links) → Geist (Mitte) → Seele (rechts) */
+  .trinity .pillar:nth-child(1) .pillar-glyph { margin-left: 0; margin-right: auto; }
+  .trinity .pillar:nth-child(2) .pillar-glyph { margin-left: auto; margin-right: auto; }
+  .trinity .pillar:nth-child(3) .pillar-glyph { margin-left: auto; margin-right: 0; }
 
   /* OFFERS */
   .offers { display: grid; gap: 1.5rem; margin-top: 2rem; }
@@ -287,7 +291,7 @@
     <div class="music-teaser-covers">
       <img src="img/Wunschkonzert%20Cover.jpg" alt="Wunschkonzert · Album 2019">
       <img src="img/Federleicht.jpg" alt="Federleicht · Single">
-      <img src="img/Hoffnung.jpg" alt="Hoffnung · Single">
+      <img src="img/CiaoKakao.jpg" alt="Ciao Kakao · Single">
     </div>
 
     <p>Album, Singles, Podcast „Männer &amp; Gefühle", Konzerte und Booking-Anfragen findest du auf meiner Künstler-Seite.</p>
